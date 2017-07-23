@@ -13,6 +13,7 @@ import * as messageAPI from './api/message'
 import ClientImageModal from './components/Modal/ClientImageModal'
 import ClientModal from './components/Modal/ClientModal'
 import Header from './components/Header';
+import Order from './components/Order'
 import Image from './components/Image';
 import LogInform from './components/logIn/LogInForm';
 import Mail from './components/Mail';

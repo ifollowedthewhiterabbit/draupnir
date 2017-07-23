@@ -17,7 +17,6 @@ import Image from './components/Image';
 import LogInform from './components/logIn/LogInForm';
 import Mail from './components/Mail';
 import MainNav from './components/MainNav';
-import Order from './components/Order';
 import PdfForm from './components/pdfForm';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import { Redirect } from 'react-router-dom'

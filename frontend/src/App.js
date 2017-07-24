@@ -197,6 +197,22 @@ class App extends Component {
     })
   }
 
+  handleDeleteMessage = ({ messageId }) => {
+    messageAPI.deleteMessage({ messageId })
+    .then((deletedMessage) => {
+      this.setState(({ adminMessages }) => {
+        return {
+          adminMessages: adminMessages.filter((message) => {
+            return message._id !== deletedMessage._id
+          })
+        }
+      })
+    })
+    .catch((err) => {
+      this.setState({error: err})
+    })
+  }
+
 // FETCH SECTION ---------------------------------------------------------
 // fetch logged in Admins details
 fetchSignedInAdminDetails = () => {
@@ -512,6 +528,7 @@ fetchAllAdminMessages = () => {
                   adminMessages={ adminMessages }
                   onCreateMessage={ this.handleCreateMessage }
                   currentUser ={ currentUser }
+                  onMessageDelete={ this.handleDeleteMessage }
                 />
                   ) : (
                   <p>loading..</p>
